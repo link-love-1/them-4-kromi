@@ -22,51 +22,14 @@
             filter: blur(3px) brightness(0.5); z-index: 0; pointer-events: none;
         }
 
-       /* 🌸 ستيكرات الخلفية الثابتة */
-.bg-stickers img { 
-    position: absolute; 
-    opacity: 0.35; 
-    pointer-events: none; 
-    -webkit-user-drag: none; 
-    filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)); 
-    z-index: 1; 
-}
+        /* 🌸 ستيكرات الخلفية الثابتة */
+        .bg-stickers img { position: absolute; opacity: 0.35; pointer-events: none; -webkit-user-drag: none; filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)); z-index: 1; }
+        .bg-sticker-1 { top: 10%; left: 8%; width: 95px; transform: rotate(-15deg); }
+        .bg-sticker-2 { bottom: 20%; right: 8%; width: 110px; transform: rotate(15deg); }
+        .bg-sticker-3 { top: 60%; left: 5%; width: 85px; transform: rotate(20deg); }
+        .bg-sticker-4 { top: 15%; right: 10%; width: 90px; transform: rotate(-25deg); opacity: 0.25; }
 
-/* --- الستيكر الأول --- */
-/* 1. الزاوية اليمنى العلوية */
-.bg-sticker-1-top-right { 
-    top: 5%; 
-    right: 5%; 
-    width: 90px; 
-    transform: rotate(15deg); 
-}
-
-/* 2. الزاوية اليسرى السفلية */
-.bg-sticker-1-bottom-left { 
-    bottom: 5%; 
-    left: 5%; 
-    width: 90px; 
-    transform: rotate(-15deg); 
-}
-
-/* --- الستيكر الثاني --- */
-/* 1. الزاوية اليسرى العلوية */
-.bg-sticker-2-top-left { 
-    top: 5%; 
-    left: 5%; 
-    width: 110px; 
-    transform: rotate(-15deg); 
-}
-
-/* 2. الزاوية اليمنى السفلية */
-.bg-sticker-2-bottom-right { 
-    bottom: 5%; 
-    right: 5%; 
-    width: 110px; 
-    transform: rotate(15deg); 
-}
-
-        /* 🫧 الدوائر العائمة */
+        /* 🫧 الدوائر العائمة (خلف المحتوى) */
         .bg-circles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; pointer-events: none; }
         .bg-circles li { position: absolute; display: block; list-style: none; width: 20px; height: 20px; background: rgba(236, 72, 153, 0.1); border: 2px solid rgba(14, 165, 233, 0.3); animation: animate 25s linear infinite; bottom: -150px; border-radius: 50%; }
         .bg-circles li:nth-child(1){ left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
@@ -88,51 +51,56 @@
             padding: 10px; background: transparent; border: none; box-shadow: none;
         }
 
-        /* 🐼 الأفاتار المضيء */
+        /* 🐼 الأفاتار المضيء (أنيميشن احترافي) */
         .avatar-container {
-            width: 150px; height: 150px; border-radius: 50%; overflow: hidden;
-            border: 3px solid rgba(255,255,255,0.9);
-            box-shadow: 0 0 35px rgba(236, 72, 153, 0.8), 0 0 20px rgba(14, 165, 233, 0.8);
-            margin-bottom: 25px; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 180px; height: 180px; border-radius: 50%; overflow: hidden;
+            border: 4px solid rgba(255,255,255,0.9);
+            box-shadow: 0 0 45px rgba(236, 72, 153, 0.8), 0 0 25px rgba(14, 165, 233, 0.8);
+            margin-bottom: 25px; 
             pointer-events: none; -webkit-user-drag: none; background: transparent;
         }
         .avatar-container img { width: 100%; height: 100%; object-fit: cover; pointer-events: none; -webkit-user-drag: none; }
+        
+        .animate-bounce-in { animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes bounceIn { 0% { transform: scale(0.8); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 
-        /* 📄 نظام الشرائح */
+        /* 📄 نظام الشرائح السلس */
         .slide { display: none; flex-direction: column; align-items: center; gap: 20px; opacity: 0; width: 100%; }
-        .slide.active { display: flex; animation: slideIn 0.5s forwards; }
-        @keyframes slideIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        .slide.active { display: flex; animation: slideFadeUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+        @keyframes slideFadeUp { from { opacity: 0; transform: translateY(20px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
         /* ✍️ النصوص */
-        h2 { font-size: 24px; font-weight: 900; line-height: 1.6; color: #fff; text-shadow: 0 3px 10px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9); }
-        .message-box { padding: 5px; width: 100%; font-size: 18px; line-height: 1.8; color: #f8fafc; font-weight: bold; text-shadow: 0 3px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,1); }
+        h2 { font-size: 26px; font-weight: 900; line-height: 1.6; color: #fff; text-shadow: 0 3px 10px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9); }
+        .message-box { padding: 5px; width: 100%; font-size: 20px; line-height: 1.8; color: #f8fafc; font-weight: bold; text-shadow: 0 3px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,1); min-height: 80px; }
+        
+        .cursor { animation: blink 1s infinite; color: #fb7185; font-weight: bold; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
         /* 🖲️ الأزرار المستطيلة */
         button { cursor: pointer; pointer-events: auto; outline: none; }
         .btn-solid {
-            padding: 12px 35px; background: linear-gradient(45deg, rgb(247, 246, 246), #ec3c59);
-            border: 1px solid rgba(255,255,255,0.4); border-radius: 8px; 
-            font-size: 16px; font-weight: bold; color: white; transition: all 0.2s;
+            padding: 12px 40px; background: linear-gradient(45deg, #ec4899, #f43f5e);
+            border: 1px solid rgba(255,255,255,0.4); border-radius: 12px;
+            font-size: 18px; font-weight: bold; color: white; transition: all 0.2s;
             box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
         .btn-solid:active { transform: scale(0.95); }
         .btn-blue { background: linear-gradient(45deg, #0ea5e9, #38bdf8); }
 
-        /* 🏃‍♂️ أزرار الألعاب */
-        .action-btns { display: flex; gap: 15px; justify-content: center; align-items: center; width: 100%; position: relative; height: 50px; }
-        .btn-yes { background: linear-gradient(45deg, #10b981, #34d399); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; transition: transform 0.2s; box-shadow: 0 8px 20px rgba(0,0,0,0.5); z-index: 10; position: relative; }
+        /* 🏃‍♂️ أزرار (أي / لا) في الألعاب - المشتركة */
+        .shared-action-btns { display: none; gap: 15px; justify-content: center; align-items: center; width: 100%; position: relative; height: 60px; margin-top: 10px; }
+        .btn-yes { background: linear-gradient(45deg, #10b981, #34d399); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 45px; border-radius: 12px; font-weight: bold; font-size: 18px; transition: transform 0.2s; box-shadow: 0 8px 20px rgba(0,0,0,0.5); z-index: 10; position: relative; }
         .btn-yes:active { transform: scale(0.95); }
-        .btn-no-escape { background: linear-gradient(45deg, #64748b, #94a3b8); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; position: absolute; right: 15%; transition: all 0.25s ease-out; box-shadow: 0 8px 20px rgba(0,0,0,0.5); white-space: nowrap; z-index: 5; }
+        .btn-no-escape { background: linear-gradient(45deg, #64748b, #94a3b8); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 45px; border-radius: 12px; font-weight: bold; font-size: 18px; position: absolute; right: 15%; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), right 0.3s, top 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.5); white-space: nowrap; z-index: 5; }
 
-        /* 💯 العداد والنهاية */
-        .final-percent { font-size: 35px; font-weight: 900; margin: 15px 0; letter-spacing: 2px; text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 3px 10px rgba(0,0,0,0.8); transition: color 0.1s; }
-        .btn-restart { margin-top: 15px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.5); border-radius: 8px; padding: 12px 35px; font-weight: bold; color: #fff; backdrop-filter: blur(5px); }
+        /* 💯 العداد المجنون والنهاية */
+        .final-percent { font-size: 38px; font-weight: 900; margin: 15px 0; letter-spacing: 2px; text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 3px 10px rgba(0,0,0,0.8); transition: color 0.1s; }
+        .btn-restart { margin-top: 15px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.5); border-radius: 12px; padding: 12px 35px; font-weight: bold; color: #fff; backdrop-filter: blur(5px); }
 
-        /* 🚥 النقاط السفلية */
-        .dots-wrapper { position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; justify-content: center; width: 100%; }
+        /* 🚥 النقاط السفلية الـ 10 */
+        .dots-wrapper { position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; justify-content: center; width: 100%; }
         .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); transition: all 0.3s; box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
         .dot.active { background: #ffffff; width: 22px; border-radius: 10px; box-shadow: 0 0 8px #fff; }
-
     </style>
 </head>
 <body>
@@ -146,22 +114,17 @@
 
     <div class="bg-image"></div>
     <div class="bg-stickers">
-       <div class="bg-stickers">
-    <!-- الستيكر الأول يظهر مرتين -->
-    <img src="sticker1.png" class="bg-sticker-1-top-right" alt="Sticker 1">
-    <img src="sticker1.png" class="bg-sticker-1-bottom-left" alt="Sticker 1">
-
-    <!-- الستيكر الثاني يظهر مرتين في الزوايا المتبقية -->
-    <img src="sticker2.png" class="bg-sticker-2-top-left" alt="Sticker 2">
-    <img src="sticker2.png" class="bg-sticker-2-bottom-right" alt="Sticker 2">
-</div>
+        <img src="bg-sticker1.png" class="bg-sticker-1-top" alt="bg">
+        <img src="bg-sticker1.png" class="bg-sticker-1-bottom" alt="bg">
+        <img src="bg-sticker2.png" class="bg-sticker-2-top" alt="bg">
+        <img src="bg-sticker2.png" class="bg-sticker-2-bottom" alt="bg">
     </div>
     <ul class="bg-circles"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
     <div class="falling-items" id="fallingItems"></div>
 
     <div class="app-container">
         
-        <div class="avatar-container" id="avatarBox">
+        <div class="avatar-container animate-bounce-in" id="avatarBox">
             <img id="avatar-img" src="gif1.webp" alt="Avatar">
         </div>
 
@@ -177,39 +140,28 @@
 
         <div class="slide" id="slide-3">
             <div class="message-box" id="dyn-message"></div>
-            <button class="btn-solid" onclick="goToSlide(4, 'gif4.gif')">اضغطي للمتابعة</button>
+            <button class="btn-solid" id="btn-read-more" style="display: none;" onclick="goToSlide(4, 'gif4.gif')">اضغطي للمتابعة</button>
         </div>
 
         <div class="slide" id="slide-4">
             <h2 id="dyn-q2">تحبيني ؟</h2>
-            <div class="action-btns">
-                <button class="btn-yes" onclick="goToYesSequence()">اي</button>
-                <button class="btn-solid btn-blue" style="padding: 12px 40px;" onclick="handleNo1()">لا</button>
-            </div>
         </div>
 
         <div class="slide" id="slide-5">
             <h2>شنو لااااااا 🤨</h2>
-            <div class="action-btns">
-                <button class="btn-yes" onclick="goToYesSequence()">اي</button>
-                <button class="btn-solid btn-blue" style="padding: 12px 40px;" onclick="handleNo2()">لا</button>
-            </div>
         </div>
 
         <div class="slide" id="slide-6">
             <h2 id="dyn-q3">هوه شنو لا دوسي أي 😑</h2>
-            <div class="action-btns">
-                <button class="btn-yes" onclick="goToYesSequence()">اي</button>
-                <button class="btn-solid btn-blue" style="padding: 12px 40px;" onclick="handleNo3()">لا</button>
-            </div>
         </div>
 
         <div class="slide" id="slide-7">
             <h2 id="dyn-q4">أعرف تحبيني 😜🫶</h2>
-            <div class="action-btns" style="height: 60px;">
-                <button class="btn-yes" id="btn-yes-target" onclick="goToYesSequence()">اي</button>
-                <button class="btn-no-escape" id="btn-escaping" onclick="escapeLogic()">لا</button>
-            </div>
+        </div>
+
+        <div class="shared-action-btns" id="shared-action-btns">
+            <button class="btn-yes" id="btn-yes-target" onclick="goToYesSequence()">اي</button>
+            <button class="btn-no-escape" id="btn-escaping" onclick="handleSharedNo()">لا</button>
         </div>
 
         <div class="slide" id="slide-8">
@@ -237,11 +189,11 @@
 
     <div id="yt-audio-player" style="position:fixed; width:1px; height:1px; opacity:0.001; pointer-events:none;"></div>
 
-    <button onclick="document.getElementById('info-modal-overlay').style.display='flex'" style="position: fixed; bottom: 25px; left: 25px; width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); color: #fff; font-size: 24px; font-weight: 500; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 99999; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">!</button>
+    <button onclick="document.getElementById('info-modal-overlay').style.display='flex'" style="position: fixed; bottom: 25px; left: 25px; width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); color: #fff; font-size: 24px; font-weight: 500; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 99999; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">!</button>
 
-    <div id="info-modal-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); z-index: 100000; display: none; justify-content: center; align-items: center; direction: rtl; padding: 20px; box-sizing: border-box;">
-        <div style="background: #ffffff; width: 100%; max-width: 400px; border-radius: 24px; padding: 40px 24px 24px; text-align: center; position: relative; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);">
-            <button onclick="document.getElementById('info-modal-overlay').style.display='none'" style="position: absolute; top: 20px; right: 20px; background: #f1f5f9; border: none; width: 36px; height: 36px; border-radius: 50%; color: #64748b; font-weight: bold; cursor: pointer; font-size: 14px;">✕</button>
+    <div id="info-modal-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 100000; display: none; justify-content: center; align-items: center; direction: rtl; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 20px; box-sizing: border-box;">
+        <div style="background: #ffffff; width: 100%; max-width: 400px; border-radius: 24px; padding: 40px 24px 24px; text-align: center; position: relative; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
+            <button onclick="document.getElementById('info-modal-overlay').style.display='none'" style="position: absolute; top: 20px; right: 20px; background: #f1f5f9; border: none; width: 36px; height: 36px; border-radius: 50%; color: #64748b; font-weight: bold; cursor: pointer; font-size: 14px; display: flex; justify-content: center; align-items: center;">✕</button>
             <div style="font-size: 50px; margin-bottom: 16px;">🎁</div>
             <h3 style="color: #0f172a; font-size: 20px; margin-top: 0; margin-bottom: 20px; font-weight: 800;">أنشئ هديتك الآن واختار الثيم اللي يناسبك!</h3>
             <a href="https://www.instagram.com/link.love1?igsh=dDRjd2d3MTN1dm92" target="_blank" style="display: block; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #ffffff; text-decoration: none; padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 15px; margin-bottom: 28px; box-shadow: 0 4px 14px rgba(220, 39, 67, 0.4);">عبر حسابنا على الانستغرام</a>
@@ -249,36 +201,37 @@
             <div style="text-align: right; display: flex; flex-direction: column; gap: 12px;">
                 <div style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: #dc2743; font-size: 12px; margin-top: 2px;">•</span><p style="color: #475569; font-size: 12.5px; line-height: 1.6; margin: 0; font-weight: 500;">نحن غير مسؤولين عن الاستخدامات الخاطئة لمواقعنا وثيماتنا من قبل أي شخص.</p></div>
                 <div style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: #dc2743; font-size: 12px; margin-top: 2px;">•</span><p style="color: #475569; font-size: 12.5px; line-height: 1.6; margin: 0; font-weight: 500;">كل ثيماتنا ومواقعنا هي ملك لنا ومن تصميمنا الخاص.</p></div>
+                <div style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: #dc2743; font-size: 12px; margin-top: 2px;">•</span><p style="color: #475569; font-size: 12.5px; line-height: 1.6; margin: 0; font-weight: 500;">لا يتم بيع أو تداول مواقعنا في مكان آخر إلا إذا كان الحساب تابعاً لنا، ويتم نشر الحسابات الرسمية في مواقعنا فقط.</p></div>
+                <div style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: #dc2743; font-size: 12px; margin-top: 2px;">•</span><p style="color: #475569; font-size: 12.5px; line-height: 1.6; margin: 0; font-weight: 500;">إذا كان هنالك أي حسابات تنشر فيديوهاتنا أو تتداول مواقعنا، قوموا بإبلاغنا عبر حساباتنا الرسمية. إذا كان البلاغ صحيحاً سنقدم مكافأة للمبلّغ.</p></div>
             </div>
             <p style="color: #94a3b8; font-size: 12px; font-weight: 600; margin-top: 24px; margin-bottom: 0;">شاكرين تعاونكم — إدارة LinkLove</p>
         </div>
     </div>
 
     <script>
-        // 1. استخراج البيانات
         const urlParams = new URLSearchParams(window.location.search);
         const recipient = urlParams.get('recipient') || 'صديقي';
+        const sender = urlParams.get('sender') || 'شخص يحبك';
         const message = (urlParams.get('message') || 'رسالة خاصة لك...').replace(/\n/g, '<br>');
         const gender = urlParams.get('gender') || 'female';
         const rawAudioUrl = urlParams.get('yt') || '';
         const startTime = parseInt(urlParams.get('start')) || 0;
 
-        // 2. الضمائر الذكية
         const isMale = (gender === 'male');
         document.getElementById('dyn-recipient').innerText = recipient;
-        document.getElementById('dyn-message').innerHTML = message;
         
+        // إعداد الجمل مع اسم المرسل
         document.getElementById('dyn-q1').innerText = isMale ? "عندي رسالة الك" : "عندي رسالة الج";
-        document.getElementById('dyn-q2').innerText = isMale ? "تحبني ؟" : "تحبيني ؟";
+        document.getElementById('dyn-q2').innerHTML = `<span style="color:#fb7185;">${sender}</span>... ${isMale ? 'تحبني' : 'تحبيني'} ؟`;
         document.getElementById('dyn-q3').innerText = isMale ? "هوه شنو لا دوس أي 😑" : "هوه شنو لا دوسي أي 😑";
         document.getElementById('dyn-q4').innerText = isMale ? "أعرف تحبني 😜🫶" : "أعرف تحبيني 😜🫶";
         document.getElementById('dyn-q5').innerText = isMale ? "وأني هم أموت بيك 🩷🥹" : "وأني هم أموت بيج 🩷🥹";
         document.getElementById('dyn-q6').innerHTML = isMale ? "أحببببببك موووووتت<br>أحببببببك حببببببب<br>كدد الكووووونننننن" : "أحبببججججج موووووتت<br>أحبببججج حببببببب<br>كدد الكووووونننننن";
         document.getElementById('dyn-q7').innerHTML = isMale ? "نسبة حبي تزيد كل يوم وتتضاعف أكثرررررررررر<br>أحببببببك حبب حببب هوااااااييييي" : "نسبة حبي تزيد كل يوم وتتضاعف أكثرررررررررر<br>أحبببججج حبب حببب هوااااااييييي";
 
-        // 3. التحكم بالشرائح
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
+        const sharedBtns = document.getElementById('shared-action-btns');
         
         function updateDots(index) {
             dots.forEach((dot, i) => {
@@ -287,42 +240,86 @@
             });
         }
 
+        // تأثير الكتابة (Typewriter Effect)
+        let typeWriterActive = false;
+        function typeWriterHTML(htmlStr, element, speed) {
+            if(typeWriterActive) return;
+            typeWriterActive = true;
+            element.innerHTML = '';
+            let i = 0; let isTag = false; let text = '';
+            
+            function type() {
+                if (i < htmlStr.length) {
+                    let char = htmlStr.charAt(i);
+                    if (char === '<') isTag = true;
+                    text += char;
+                    element.innerHTML = text + '<span class="cursor">|</span>';
+                    i++;
+                    if (char === '>') isTag = false;
+                    setTimeout(type, isTag ? 0 : speed);
+                } else {
+                    element.innerHTML = text; // إزالة المؤشر
+                    typeWriterActive = false;
+                    document.getElementById('btn-read-more').style.display = 'block'; // إظهار زر المتابعة بعد انتهاء الكتابة
+                }
+            }
+            type();
+        }
+
         function goToSlide(num, gifName) {
             slides.forEach(s => s.classList.remove('active'));
             document.getElementById('slide-' + num).classList.add('active');
             updateDots(num - 1);
             
-            if(gifName) document.getElementById('avatar-img').src = gifName;
-            
-            const avatarBox = document.getElementById('avatarBox');
-            avatarBox.style.transform = 'scale(1.1)';
-            setTimeout(() => avatarBox.style.transform = 'scale(1)', 200);
+            // تغيير الستيكر مع أنيميشن النطوطة
+            if(gifName) {
+                document.getElementById('avatar-img').src = gifName;
+                const avatarBox = document.getElementById('avatarBox');
+                avatarBox.classList.remove('animate-bounce-in');
+                void avatarBox.offsetWidth; // ريفريش سريع لتشغيل الأنيميشن من جديد
+                avatarBox.classList.add('animate-bounce-in');
+            }
+
+            // تفعيل تأثير الكتابة في الخطوة 3 فقط
+            if (num === 3) {
+                typeWriterHTML(message, document.getElementById('dyn-message'), 60);
+            }
+
+            // إظهار وإخفاء أزرار الهروب للشرائح من 4 إلى 7 فقط
+            if (num >= 4 && num <= 7) {
+                sharedBtns.style.display = 'flex';
+                if(num === 4) sharedBtns.style.animation = 'slideFadeUp 0.6s forwards';
+            } else {
+                sharedBtns.style.display = 'none';
+            }
         }
 
-        function handleNo1() { goToSlide(5, 'gif5.gif'); }
-        function handleNo2() { goToSlide(6, 'gif6.gif'); }
-        function handleNo3() { goToSlide(7, 'gif7.gif'); }
-
-        // مسار الهروب (يهرب 4 مرات ثم يتخفى خلف زر "أي" ويفعل خيار الموافقة)
+        // منطق أزرار الهروب المشتركة عبر الشرائح (4,5,6,7)
         let escapeCount = 0;
-        function escapeLogic() {
+        function handleSharedNo() {
             escapeCount++;
             const btn = document.getElementById('btn-escaping');
             
-            if (escapeCount >= 5) {
-                // المحاولة الخامسة: يختفي خلف زر "أي"
+            // 1. تغيير الشريحة والستيكر بدون تغيير مكان الأزرار
+            if (escapeCount === 1) goToSlide(5, 'gif5.gif');
+            else if (escapeCount === 2) goToSlide(6, 'gif6.gif');
+            else if (escapeCount === 3) goToSlide(7, 'gif7.gif');
+
+            // 2. حركة زر الـ "لا" (تتم بعد تغيير الشريحة لتبدو كأنها تفاعلية)
+            if (escapeCount >= 4) {
+                // المحاولة الرابعة: يختفي خلف زر "أي" مع إظهار جزء بسيط ليكون حقيقي
                 btn.style.right = '50%';
                 btn.style.marginRight = '-55px';
                 btn.style.top = '10px';
                 btn.style.transform = `translate(25px, 5px) rotate(-6deg)`;
                 btn.style.zIndex = '5';
-                
-                // التعديل السحري: إذا انضغط من الحافة راح يعتبر زر موافقة "أي"!
-                btn.onclick = goToYesSequence; 
+                btn.onclick = goToYesSequence; // يجبره على الـ "أي"
             } else {
+                // هروب عشوائي بميلان مجنون
                 const x = Math.random() * 160 - 80;
-                const y = Math.random() * 100 - 50;
-                btn.style.transform = `translate(${x}px, ${y}px)`;
+                const y = Math.random() * 80 - 40;
+                const rot = Math.random() * 50 - 25;
+                btn.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
             }
         }
 
@@ -350,7 +347,6 @@
             }, 100);
         }
 
-        // 4. نظام الصوت المحدث للتكرار الصحيح
         const hasAudio = rawAudioUrl.trim().length > 0;
         const isMp3File = rawAudioUrl.toLowerCase().includes('.mp3') || rawAudioUrl.includes('supabase.co/storage');
         let ytPlayer = null; let localAudio = null;
@@ -359,8 +355,6 @@
             if (isMp3File) {
                 localAudio = document.createElement('audio');
                 localAudio.src = rawAudioUrl; localAudio.preload = 'auto';
-                
-                // إعادة الأغنية للمكان المحدد (startTime)
                 localAudio.addEventListener('ended', () => {
                     localAudio.currentTime = startTime;
                     localAudio.play();
@@ -380,7 +374,7 @@
                         playerVars: { 'autoplay': 0, 'controls': 0, 'start': startTime, 'playsinline': 1 },
                         events: {
                             'onStateChange': (e) => {
-                                if (e.data === 0) { // إعادة الأغنية عند الانتهاء
+                                if (e.data === 0) {
                                     ytPlayer.seekTo(startTime);
                                     ytPlayer.playVideo();
                                 }
@@ -393,14 +387,8 @@
 
         function startAudioAndNext(slideNum, gifName) {
             if (hasAudio) {
-                if (isMp3File && localAudio) { 
-                    localAudio.currentTime = startTime; 
-                    localAudio.play().catch(e=>console.log(e)); 
-                } 
-                else if (!isMp3File && ytPlayer && ytPlayer.playVideo) { 
-                    ytPlayer.seekTo(startTime); 
-                    ytPlayer.playVideo(); 
-                }
+                if (isMp3File && localAudio) { localAudio.currentTime = startTime; localAudio.play().catch(e=>console.log(e)); } 
+                else if (!isMp3File && ytPlayer && ytPlayer.playVideo) { ytPlayer.seekTo(startTime); ytPlayer.playVideo(); }
             }
             goToSlide(slideNum, gifName);
         }
