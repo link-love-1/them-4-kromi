@@ -22,12 +22,16 @@
             filter: blur(3px) brightness(0.5); z-index: 0; pointer-events: none;
         }
 
-        /* 🌸 ستيكرات الخلفية الثابتة */
+        /* 🌸 ستيكرات الخلفية الثابتة والموزعة على الزوايا الأربعة */
         .bg-stickers img { position: absolute; opacity: 0.35; pointer-events: none; -webkit-user-drag: none; filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)); z-index: 1; }
-        .bg-sticker-1 { top: 10%; left: 8%; width: 95px; transform: rotate(-15deg); }
-        .bg-sticker-2 { bottom: 20%; right: 8%; width: 110px; transform: rotate(15deg); }
-        .bg-sticker-3 { top: 60%; left: 5%; width: 85px; transform: rotate(20deg); }
-        .bg-sticker-4 { top: 15%; right: 10%; width: 90px; transform: rotate(-25deg); opacity: 0.25; }
+        
+        /* الستيكر الأول (الزاوية اليمنى العلوية واليسرى السفلية) */
+        .bg-sticker-1-top-right { top: 4%; right: 4%; width: 90px; transform: rotate(15deg); }
+        .bg-sticker-1-bottom-left { bottom: 4%; left: 4%; width: 90px; transform: rotate(-15deg); }
+        
+        /* الستيكر الثاني (الزاوية اليسرى العلوية واليمنى السفلية) */
+        .bg-sticker-2-top-left { top: 4%; left: 4%; width: 110px; transform: rotate(-15deg); }
+        .bg-sticker-2-bottom-right { bottom: 4%; right: 4%; width: 110px; transform: rotate(15deg); }
 
         /* 🫧 الدوائر العائمة (خلف المحتوى) */
         .bg-circles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; pointer-events: none; }
@@ -76,22 +80,77 @@
         .cursor { animation: blink 1s infinite; color: #fb7185; font-weight: bold; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        /* 🖲️ الأزرار المستطيلة */
+        /* 🖲️ الأزرار المستطيلة بتأثير 3D حقيقي وحدود بيضاء */
         button { cursor: pointer; pointer-events: auto; outline: none; }
         .btn-solid {
-            padding: 12px 40px; background: linear-gradient(45deg, #ec4899, #f43f5e);
-            border: 1px solid rgba(255,255,255,0.4); border-radius: 12px;
-            font-size: 18px; font-weight: bold; color: white; transition: all 0.2s;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            padding: 14px 40px; 
+            background: linear-gradient(180deg, #f43f5e 0%, #e11d48 100%);
+            border: 2px solid #ffffff; 
+            border-bottom: 6px solid #9f1239; /* طبقة الـ 3D السفلية */
+            border-radius: 14px;
+            font-size: 18px; 
+            font-weight: 900; 
+            color: white; 
+            transition: all 0.1s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            position: relative;
+            top: 0;
         }
-        .btn-solid:active { transform: scale(0.95); }
-        .btn-blue { background: linear-gradient(45deg, #0ea5e9, #38bdf8); }
+        .btn-solid:active { 
+            top: 4px; /* النزول للأسفل عند الضغط ليحاكي الـ 3D */
+            border-bottom-width: 2px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+        .btn-blue { 
+            background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%); 
+            border-bottom-color: #0369a1;
+        }
 
-        /* 🏃‍♂️ أزرار (أي / لا) في الألعاب - المشتركة */
-        .shared-action-btns { display: none; gap: 15px; justify-content: center; align-items: center; width: 100%; position: relative; height: 60px; margin-top: 10px; }
-        .btn-yes { background: linear-gradient(45deg, #10b981, #34d399); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 45px; border-radius: 12px; font-weight: bold; font-size: 18px; transition: transform 0.2s; box-shadow: 0 8px 20px rgba(0,0,0,0.5); z-index: 10; position: relative; }
-        .btn-yes:active { transform: scale(0.95); }
-        .btn-no-escape { background: linear-gradient(45deg, #64748b, #94a3b8); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 45px; border-radius: 12px; font-weight: bold; font-size: 18px; position: absolute; right: 15%; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), right 0.3s, top 0.3s; box-shadow: 0 8px 20px rgba(0,0,0,0.5); white-space: nowrap; z-index: 5; }
+        /* 🏃‍♂️ أزرار لعبة (أي / لا) المشتركة */
+        .shared-action-btns { display: none; gap: 20px; justify-content: center; align-items: center; width: 100%; position: relative; height: 80px; margin-top: 10px; }
+        
+        /* زر "اي" بلون مختلف (بنفسجي ساحر ثلاثي الأبعاد) */
+        .btn-yes { 
+            background: linear-gradient(180deg, #d946ef 0%, #c026d3 100%); 
+            border: 2px solid #ffffff; 
+            border-bottom: 6px solid #86198f;
+            color: white; 
+            padding: 14px 45px; 
+            border-radius: 14px; 
+            font-weight: 900; 
+            font-size: 18px; 
+            transition: all 0.1s ease; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+            z-index: 10; 
+            position: relative; 
+            top: 0;
+        }
+        .btn-yes:active { 
+            top: 4px;
+            border-bottom-width: 2px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        /* زر "لا" ثلاثي الأبعاد مستقر في البداية ويهرب عند الضغط فقط */
+        .btn-no-escape { 
+            background: linear-gradient(180deg, #64748b 0%, #475569 100%); 
+            border: 2px solid #ffffff; 
+            border-bottom: 6px solid #334155;
+            color: white; 
+            padding: 14px 45px; 
+            border-radius: 14px; 
+            font-weight: 900; 
+            font-size: 18px; 
+            position: relative; 
+            top: 0;
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), left 0.25s, top 0.25s; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4); 
+            white-space: nowrap; 
+            z-index: 5; 
+        }
+        .btn-no-escape:active {
+            border-bottom-width: 2px;
+        }
 
         /* 💯 العداد المجنون والنهاية */
         .final-percent { font-size: 38px; font-weight: 900; margin: 15px 0; letter-spacing: 2px; text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 3px 10px rgba(0,0,0,0.8); transition: color 0.1s; }
@@ -114,10 +173,11 @@
 
     <div class="bg-image"></div>
     <div class="bg-stickers">
-        <img src="bg-sticker1.png" class="bg-sticker-1-top" alt="bg">
-        <img src="bg-sticker1.png" class="bg-sticker-1-bottom" alt="bg">
-        <img src="bg-sticker2.png" class="bg-sticker-2-top" alt="bg">
-        <img src="bg-sticker2.png" class="bg-sticker-2-bottom" alt="bg">
+        <!-- توزيع متناوب ومنظم للستيكرات في الزوايا الأربعة للـ HTML -->
+        <img src="bg-sticker1.png" class="bg-sticker-1-top-right" alt="bg">
+        <img src="bg-sticker1.png" class="bg-sticker-1-bottom-left" alt="bg">
+        <img src="bg-sticker2.png" class="bg-sticker-2-top-left" alt="bg">
+        <img src="bg-sticker2.png" class="bg-sticker-2-bottom-right" alt="bg">
     </div>
     <ul class="bg-circles"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
     <div class="falling-items" id="fallingItems"></div>
@@ -294,31 +354,33 @@
             }
         }
 
-        // منطق أزرار الهروب المشتركة عبر الشرائح (4,5,6,7)
+        // منطق أزرار الهروب المشتركة عبر الشرائح (4,5,6,7) عند الضغط الفعلي
         let escapeCount = 0;
         function handleSharedNo() {
             escapeCount++;
             const btn = document.getElementById('btn-escaping');
             
-            // 1. تغيير الشريحة والستيكر بدون تغيير مكان الأزرار
+            // 1. تغيير الشريحة والستيكر بناءً على عدد الضغطات
             if (escapeCount === 1) goToSlide(5, 'gif5.gif');
             else if (escapeCount === 2) goToSlide(6, 'gif6.gif');
             else if (escapeCount === 3) goToSlide(7, 'gif7.gif');
 
-            // 2. حركة زر الـ "لا" (تتم بعد تغيير الشريحة لتبدو كأنها تفاعلية)
+            // 2. حركة الهروب العشوائية لزر "لا" تبدأ بالحدوث عند النقر عليه
             if (escapeCount >= 4) {
-                // المحاولة الرابعة: يختفي خلف زر "أي" مع إظهار جزء بسيط ليكون حقيقي
+                // المحاولة الرابعة فما فوق: يقفل الموقف ويتحول لزر "أي" مخفي جزئياً لتجبر المستخدم
+                btn.style.position = 'absolute';
                 btn.style.right = '50%';
                 btn.style.marginRight = '-55px';
                 btn.style.top = '10px';
                 btn.style.transform = `translate(25px, 5px) rotate(-6deg)`;
                 btn.style.zIndex = '5';
-                btn.onclick = goToYesSequence; // يجبره على الـ "أي"
+                btn.onclick = goToYesSequence; // إجبار التوجيه للـ "نعم"
             } else {
-                // هروب عشوائي بميلان مجنون
-                const x = Math.random() * 160 - 80;
-                const y = Math.random() * 80 - 40;
-                const rot = Math.random() * 50 - 25;
+                // الهروب العشوائي يبدأ فقط بعد الضغط
+                btn.style.position = 'absolute';
+                const x = Math.random() * 140 - 70;
+                const y = Math.random() * 60 - 30;
+                const rot = Math.random() * 40 - 20;
                 btn.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
             }
         }
