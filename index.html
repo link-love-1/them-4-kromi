@@ -22,14 +22,12 @@
             filter: blur(3px) brightness(0.5); z-index: 0; pointer-events: none;
         }
 
-        /* 🌸 ستيكرات الخلفية الثابتة (متعددة الأماكن) */
+        /* 🌸 ستيكرات الخلفية الثابتة */
         .bg-stickers img { position: absolute; opacity: 0.35; pointer-events: none; -webkit-user-drag: none; filter: drop-shadow(0 0 15px rgba(255,255,255,0.4)); z-index: 1; }
-        .bg-sticker-1 { top: 10%; left: 8%; width: 95px; transform: rotate(-15deg); }
-        .bg-sticker-2 { bottom: 20%; right: 8%; width: 110px; transform: rotate(15deg); }
-        .bg-sticker-3 { top: 60%; left: 5%; width: 85px; transform: rotate(20deg); }
-        .bg-sticker-4 { top: 15%; right: 10%; width: 90px; transform: rotate(-25deg); opacity: 0.25; }
+        .bg-sticker-1 { top: 12%; left: 8%; width: 90px; transform: rotate(-15deg); }
+        .bg-sticker-2 { bottom: 18%; right: 8%; width: 110px; transform: rotate(15deg); }
 
-        /* 🫧 الدوائر العائمة (خلف المحتوى) */
+        /* 🫧 الدوائر العائمة */
         .bg-circles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; pointer-events: none; }
         .bg-circles li { position: absolute; display: block; list-style: none; width: 20px; height: 20px; background: rgba(236, 72, 153, 0.1); border: 2px solid rgba(14, 165, 233, 0.3); animation: animate 25s linear infinite; bottom: -150px; border-radius: 50%; }
         .bg-circles li:nth-child(1){ left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
@@ -39,7 +37,7 @@
 
         @keyframes animate { 0%{ transform: translateY(0) rotate(0deg); opacity: 1; } 100%{ transform: translateY(-1000px) rotate(720deg); opacity: 0; } }
 
-        /* 💖 القلوب والفيونكات المتساقطة (خلف المحتوى z-index: 2) */
+        /* 💖 القلوب والفيونكات المتساقطة */
         .falling-items { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 2; pointer-events: none; }
         .falling-item { position: absolute; top: -50px; animation: fall linear infinite; opacity: 0.6; font-size: 24px; filter: drop-shadow(0 0 5px rgba(255,255,255,0.4)); }
         @keyframes fall { 0% { transform: translateY(0) rotate(0deg) scale(1); } 100% { transform: translateY(110vh) rotate(360deg) scale(1.2); } }
@@ -51,12 +49,11 @@
             padding: 10px; background: transparent; border: none; box-shadow: none;
         }
 
-        /* 🐼 الأفاتار المضيء (مكبر ومحسن) */
+        /* 🐼 الأفاتار المضيء */
         .avatar-container {
-            width: 180px; height: 180px; /* تم التكبير هنا */
-            border-radius: 50%; overflow: hidden;
-            border: 4px solid rgba(255,255,255,0.9);
-            box-shadow: 0 0 45px rgba(236, 72, 153, 0.8), 0 0 25px rgba(14, 165, 233, 0.8);
+            width: 150px; height: 150px; border-radius: 50%; overflow: hidden;
+            border: 3px solid rgba(255,255,255,0.9);
+            box-shadow: 0 0 35px rgba(236, 72, 153, 0.8), 0 0 20px rgba(14, 165, 233, 0.8);
             margin-bottom: 25px; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             pointer-events: none; -webkit-user-drag: none; background: transparent;
         }
@@ -68,33 +65,32 @@
         @keyframes slideIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
         /* ✍️ النصوص */
-        h2 { font-size: 26px; font-weight: 900; line-height: 1.6; color: #fff; text-shadow: 0 3px 10px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9); }
-        .message-box { padding: 5px; width: 100%; font-size: 20px; line-height: 1.8; color: #f8fafc; font-weight: bold; text-shadow: 0 3px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,1); }
+        h2 { font-size: 24px; font-weight: 900; line-height: 1.6; color: #fff; text-shadow: 0 3px 10px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.9); }
+        .message-box { padding: 5px; width: 100%; font-size: 18px; line-height: 1.8; color: #f8fafc; font-weight: bold; text-shadow: 0 3px 8px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,1); }
 
         /* 🖲️ الأزرار المستطيلة */
         button { cursor: pointer; pointer-events: auto; outline: none; }
         .btn-solid {
-            padding: 12px 40px; background: linear-gradient(45deg, #ec4899, #f43f5e);
-            border: 1px solid rgba(255,255,255,0.4); border-radius: 12px;
-            font-size: 18px; font-weight: bold; color: white; transition: all 0.2s;
+            padding: 12px 35px; background: linear-gradient(45deg, #ec4899, #f43f5e);
+            border: 1px solid rgba(255,255,255,0.4); border-radius: 8px; 
+            font-size: 16px; font-weight: bold; color: white; transition: all 0.2s;
             box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
         .btn-solid:active { transform: scale(0.95); }
-        
         .btn-blue { background: linear-gradient(45deg, #0ea5e9, #38bdf8); }
 
-        /* 🏃‍♂️ أزرار (أي / لا) في الألعاب */
+        /* 🏃‍♂️ أزرار الألعاب */
         .action-btns { display: flex; gap: 15px; justify-content: center; align-items: center; width: 100%; position: relative; height: 50px; }
-        .btn-yes { background: linear-gradient(45deg, #10b981, #34d399); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 45px; border-radius: 12px; font-weight: bold; font-size: 18px; transition: transform 0.2s; box-shadow: 0 8px 20px rgba(0,0,0,0.5); z-index: 10; position: relative; }
+        .btn-yes { background: linear-gradient(45deg, #10b981, #34d399); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; transition: transform 0.2s; box-shadow: 0 8px 20px rgba(0,0,0,0.5); z-index: 10; position: relative; }
         .btn-yes:active { transform: scale(0.95); }
-        .btn-no-escape { background: linear-gradient(45deg, #64748b, #94a3b8); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 45px; border-radius: 12px; font-weight: bold; font-size: 18px; position: absolute; right: 15%; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 8px 20px rgba(0,0,0,0.5); white-space: nowrap; z-index: 5; }
+        .btn-no-escape { background: linear-gradient(45deg, #64748b, #94a3b8); border: 1px solid rgba(255,255,255,0.4); color: white; padding: 12px 40px; border-radius: 8px; font-weight: bold; font-size: 16px; position: absolute; right: 15%; transition: all 0.25s ease-out; box-shadow: 0 8px 20px rgba(0,0,0,0.5); white-space: nowrap; z-index: 5; }
 
-        /* 💯 العداد المجنون والنهاية */
-        .final-percent { font-size: 38px; font-weight: 900; margin: 15px 0; letter-spacing: 2px; text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 3px 10px rgba(0,0,0,0.8); transition: color 0.1s; }
-        .btn-restart { margin-top: 15px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.5); border-radius: 12px; padding: 12px 35px; font-weight: bold; color: #fff; backdrop-filter: blur(5px); }
+        /* 💯 العداد والنهاية */
+        .final-percent { font-size: 35px; font-weight: 900; margin: 15px 0; letter-spacing: 2px; text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 3px 10px rgba(0,0,0,0.8); transition: color 0.1s; }
+        .btn-restart { margin-top: 15px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.5); border-radius: 8px; padding: 12px 35px; font-weight: bold; color: #fff; backdrop-filter: blur(5px); }
 
-        /* 🚥 النقاط السفلية الـ 10 */
-        .dots-wrapper { position: absolute; bottom: -50px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; justify-content: center; width: 100%; }
+        /* 🚥 النقاط السفلية */
+        .dots-wrapper { position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; justify-content: center; width: 100%; }
         .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); transition: all 0.3s; box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
         .dot.active { background: #ffffff; width: 22px; border-radius: 10px; box-shadow: 0 0 8px #fff; }
 
@@ -112,12 +108,9 @@
     <div class="bg-image"></div>
     <div class="bg-stickers">
         <img src="bg-sticker1.png" class="bg-sticker-1" alt="bg">
-        <img src="bg-sticker1.png" class="bg-sticker-2" alt="bg">
-        <img src="bg-sticker2.png" class="bg-sticker-3" alt="bg">
-        <img src="bg-sticker2.png" class="bg-sticker-4" alt="bg">
+        <img src="bg-sticker2.png" class="bg-sticker-2" alt="bg">
     </div>
     <ul class="bg-circles"><li></li><li></li><li></li><li></li><li></li><li></li></ul>
-    
     <div class="falling-items" id="fallingItems"></div>
 
     <div class="app-container">
@@ -198,86 +191,22 @@
 
     <div id="yt-audio-player" style="position:fixed; width:1px; height:1px; opacity:0.001; pointer-events:none;"></div>
 
-    <!-- زر التنشيق / المودال (موجود أسفل اليسار) -->
-<button onclick="document.getElementById('info-modal-overlay').style.display='flex'" style="position: fixed; bottom: 25px; left: 25px; width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); color: #fff; font-size: 24px; font-weight: 500; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 99999; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
-    !
-</button>
+    <button onclick="document.getElementById('info-modal-overlay').style.display='flex'" style="position: fixed; bottom: 25px; left: 25px; width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); border: 1px solid rgba(255, 255, 255, 0.4); backdrop-filter: blur(15px); color: #fff; font-size: 24px; font-weight: 500; display: flex; justify-content: center; align-items: center; cursor: pointer; z-index: 99999; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);">!</button>
 
-<!-- خلفية المودال الشفافة -->
-<div id="info-modal-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 100000; display: none; justify-content: center; align-items: center; direction: rtl; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; padding: 20px; box-sizing: border-box;">
-    
-    <!-- صندوق المحتوى -->
-    <div style="background: #ffffff; width: 100%; max-width: 400px; border-radius: 24px; padding: 40px 24px 24px; text-align: center; position: relative; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); animation: modalFadeIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); box-sizing: border-box;">
-        
-        <!-- زر الإغلاق -->
-        <button onclick="document.getElementById('info-modal-overlay').style.display='none'" style="position: absolute; top: 20px; right: 20px; background: #f1f5f9; border: none; width: 36px; height: 36px; border-radius: 50%; color: #64748b; font-weight: bold; cursor: pointer; font-size: 14px; display: flex; justify-content: center; align-items: center; transition: all 0.2s ease;">✕</button>
-        
-        <!-- الأيقونة العلوية -->
-        <div style="font-size: 50px; margin-bottom: 16px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">🎁</div>
-        
-        <!-- العنوان الرئيسي -->
-        <h3 style="color: #0f172a; font-size: 20px; margin-top: 0; margin-bottom: 20px; line-height: 1.4; font-weight: 800; letter-spacing: -0.5px;">أنشئ هديتك الآن واختار الثيم اللي يناسبك!</h3>
-        
-        <!-- زر الانستغرام -->
-        <a href="https://www.instagram.com/link.love1?igsh=dDRjd2d3MTN1dm92" target="_blank" style="display: block; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #ffffff; text-decoration: none; padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 15px; margin-bottom: 28px; box-shadow: 0 4px 14px rgba(220, 39, 67, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease;">
-            عبر حسابنا على الانستغرام
-        </a>
-        
-        <!-- فاصل أنيق -->
-        <div style="height: 1px; background: #e2e8f0; margin-bottom: 20px;"></div>
-        
-        <!-- الشروط والتعليمات -->
-        <div style="text-align: right; display: flex; flex-direction: column; gap: 12px;">
-            <div style="display: flex; gap: 8px; align-items: flex-start;">
-                <span style="color: #dc2743; font-size: 12px; margin-top: 2px;">•</span>
-                <p style="color: #475569; font-size: 12.5px; line-height: 1.6; margin: 0; font-weight: 500;">نحن غير مسؤولين عن الاستخدامات الخاطئة لمواقعنا وثيماتنا من قبل أي شخص.</p>
+    <div id="info-modal-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(8px); z-index: 100000; display: none; justify-content: center; align-items: center; direction: rtl; padding: 20px; box-sizing: border-box;">
+        <div style="background: #ffffff; width: 100%; max-width: 400px; border-radius: 24px; padding: 40px 24px 24px; text-align: center; position: relative; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);">
+            <button onclick="document.getElementById('info-modal-overlay').style.display='none'" style="position: absolute; top: 20px; right: 20px; background: #f1f5f9; border: none; width: 36px; height: 36px; border-radius: 50%; color: #64748b; font-weight: bold; cursor: pointer; font-size: 14px;">✕</button>
+            <div style="font-size: 50px; margin-bottom: 16px;">🎁</div>
+            <h3 style="color: #0f172a; font-size: 20px; margin-top: 0; margin-bottom: 20px; font-weight: 800;">أنشئ هديتك الآن واختار الثيم اللي يناسبك!</h3>
+            <a href="https://www.instagram.com/link.love1?igsh=dDRjd2d3MTN1dm92" target="_blank" style="display: block; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: #ffffff; text-decoration: none; padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 15px; margin-bottom: 28px; box-shadow: 0 4px 14px rgba(220, 39, 67, 0.4);">عبر حسابنا على الانستغرام</a>
+            <div style="height: 1px; background: #e2e8f0; margin-bottom: 20px;"></div>
+            <div style="text-align: right; display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: #dc2743; font-size: 12px; margin-top: 2px;">•</span><p style="color: #475569; font-size: 12.5px; line-height: 1.6; margin: 0; font-weight: 500;">نحن غير مسؤولين عن الاستخدامات الخاطئة لمواقعنا وثيماتنا من قبل أي شخص.</p></div>
+                <div style="display: flex; gap: 8px; align-items: flex-start;"><span style="color: #dc2743; font-size: 12px; margin-top: 2px;">•</span><p style="color: #475569; font-size: 12.5px; line-height: 1.6; margin: 0; font-weight: 500;">كل ثيماتنا ومواقعنا هي ملك لنا ومن تصميمنا الخاص.</p></div>
             </div>
-            
-            <div style="display: flex; gap: 8px; align-items: flex-start;">
-                <span style="color: #dc2743; font-size: 12px; margin-top: 2px;">•</span>
-                <p style="color: #475569; font-size: 12.5px; line-height: 1.6; margin: 0; font-weight: 500;">كل ثيماتنا ومواقعنا هي ملك لنا ومن تصميمنا الخاص.</p>
-            </div>
-            
-            <div style="display: flex; gap: 8px; align-items: flex-start;">
-                <span style="color: #dc2743; font-size: 12px; margin-top: 2px;">•</span>
-                <p style="color: #475569; font-size: 12.5px; line-height: 1.6; margin: 0; font-weight: 500;">لا يتم بيع أو تداول مواقعنا في مكان آخر إلا إذا كان الحساب تابعاً لنا، ويتم نشر الحسابات الرسمية في مواقعنا فقط.</p>
-            </div>
-            
-            <div style="display: flex; gap: 8px; align-items: flex-start;">
-                <span style="color: #dc2743; font-size: 12px; margin-top: 2px;">•</span>
-                <p style="color: #475569; font-size: 12.5px; line-height: 1.6; margin: 0; font-weight: 500;">إذا كان هنالك أي حسابات تنشر فيديوهاتنا أو تتداول مواقعنا، قوموا بإبلاغنا عبر حساباتنا الرسمية. إذا كان البلاغ صحيحاً سنقدم مكافأة للمبلّغ.</p>
-            </div>
+            <p style="color: #94a3b8; font-size: 12px; font-weight: 600; margin-top: 24px; margin-bottom: 0;">شاكرين تعاونكم — إدارة LinkLove</p>
         </div>
-        
-        <!-- التوقيع العلوى السفلي -->
-        <p style="color: #94a3b8; font-size: 12px; font-weight: 600; margin-top: 24px; margin-bottom: 0;">شاكرين تعاونكم — إدارة LinkLove</p>
-
     </div>
-</div>
-
-<!-- تأثير الحركة عند فتح النافذة -->
-<style>
-    @keyframes modalFadeIn {
-        from {
-            opacity: 0;
-            transform: scale(0.9) translateY(10px);
-        }
-        to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-    }
-    
-    /* تأثيرات التمرير بالفأرة (Hover) */
-    #info-modal-overlay button:hover {
-        background: #e2e8f0 !important;
-        color: #0f172a !important;
-    }
-    #info-modal-overlay a:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(220, 39, 67, 0.5) !important;
-    }
-</style>
 
     <script>
         // 1. استخراج البيانات
@@ -285,7 +214,6 @@
         const recipient = urlParams.get('recipient') || 'صديقي';
         const message = (urlParams.get('message') || 'رسالة خاصة لك...').replace(/\n/g, '<br>');
         const gender = urlParams.get('gender') || 'female';
-        
         const rawAudioUrl = urlParams.get('yt') || '';
         const startTime = parseInt(urlParams.get('start')) || 0;
 
@@ -302,7 +230,7 @@
         document.getElementById('dyn-q6').innerHTML = isMale ? "أحببببببك موووووتت<br>أحببببببك حببببببب<br>كدد الكووووونننننن" : "أحبببججججج موووووتت<br>أحبببججج حببببببب<br>كدد الكووووونننننن";
         document.getElementById('dyn-q7').innerHTML = isMale ? "نسبة حبي تزيد كل يوم وتتضاعف أكثرررررررررر<br>أحببببببك حبب حببب هوااااااييييي" : "نسبة حبي تزيد كل يوم وتتضاعف أكثرررررررررر<br>أحبببججج حبب حببب هوااااااييييي";
 
-        // 3. التحكم بالشرائح والنقاط
+        // 3. التحكم بالشرائح
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
         
@@ -316,47 +244,44 @@
         function goToSlide(num, gifName) {
             slides.forEach(s => s.classList.remove('active'));
             document.getElementById('slide-' + num).classList.add('active');
-            updateDots(num - 1); // تحديث النقطة
+            updateDots(num - 1);
             
             if(gifName) document.getElementById('avatar-img').src = gifName;
             
             const avatarBox = document.getElementById('avatarBox');
-            avatarBox.style.transform = 'scale(1.15)';
-            setTimeout(() => avatarBox.style.transform = 'scale(1)', 250);
+            avatarBox.style.transform = 'scale(1.1)';
+            setTimeout(() => avatarBox.style.transform = 'scale(1)', 200);
         }
 
-        // مسار "الرفض"
         function handleNo1() { goToSlide(5, 'gif5.gif'); }
         function handleNo2() { goToSlide(6, 'gif6.gif'); }
         function handleNo3() { goToSlide(7, 'gif7.gif'); }
 
-        // مسار الهروب (يهرب 4 مرات ثم يتخفى خلف زر "أي")
+        // مسار الهروب (يهرب 4 مرات ثم يتخفى خلف زر "أي" ويفعل خيار الموافقة)
         let escapeCount = 0;
         function escapeLogic() {
             escapeCount++;
             const btn = document.getElementById('btn-escaping');
             
             if (escapeCount >= 5) {
-                // المحاولة الخامسة: يختفي خلف زر "أي" مع إظهار جزء بسيط ليكون حقيقي
+                // المحاولة الخامسة: يختفي خلف زر "أي"
                 btn.style.right = '50%';
-                btn.style.marginRight = '-55px'; // التمركز خلف زر أي
+                btn.style.marginRight = '-55px';
                 btn.style.top = '10px';
-                btn.style.transform = `translate(25px, 5px) rotate(-6deg)`; // إزاحة ليظهر جزء منه كأنه يختبئ
-                btn.style.zIndex = '5'; // زر أي يملك z-index 10
+                btn.style.transform = `translate(25px, 5px) rotate(-6deg)`;
+                btn.style.zIndex = '5';
+                
+                // التعديل السحري: إذا انضغط من الحافة راح يعتبر زر موافقة "أي"!
+                btn.onclick = goToYesSequence; 
             } else {
-                // هروب عشوائي متوافق مع الموبايل والايباد
                 const x = Math.random() * 160 - 80;
                 const y = Math.random() * 100 - 50;
                 btn.style.transform = `translate(${x}px, ${y}px)`;
             }
         }
 
-        // مسار "الموافقة" 
-        function goToYesSequence() {
-            goToSlide(8, 'gif8.gif');
-        }
+        function goToYesSequence() { goToSlide(8, 'gif8.gif'); }
 
-        // مسار النهاية والعداد
         function startFinalSequence() {
             goToSlide(10, 'gif10.gif');
             const counterEl = document.getElementById('love-counter');
@@ -369,7 +294,7 @@
                 counterEl.style.color = colors[Math.floor(Math.random() * colors.length)];
                 counterEl.style.textShadow = `0 0 15px ${colors[Math.floor(Math.random() * colors.length)]}`;
                 ticks++;
-                if (ticks > 40) { // 4 ثواني
+                if (ticks > 40) {
                     clearInterval(interval);
                     counterEl.innerText = '100000000000%';
                     counterEl.style.color = '#ec4899';
@@ -379,7 +304,7 @@
             }, 100);
         }
 
-        // 4. نظام الصوت
+        // 4. نظام الصوت المحدث للتكرار الصحيح
         const hasAudio = rawAudioUrl.trim().length > 0;
         const isMp3File = rawAudioUrl.toLowerCase().includes('.mp3') || rawAudioUrl.includes('supabase.co/storage');
         let ytPlayer = null; let localAudio = null;
@@ -387,7 +312,13 @@
         if (hasAudio) {
             if (isMp3File) {
                 localAudio = document.createElement('audio');
-                localAudio.src = rawAudioUrl; localAudio.preload = 'auto'; localAudio.loop = true;
+                localAudio.src = rawAudioUrl; localAudio.preload = 'auto';
+                
+                // إعادة الأغنية للمكان المحدد (startTime)
+                localAudio.addEventListener('ended', () => {
+                    localAudio.currentTime = startTime;
+                    localAudio.play();
+                });
                 document.body.appendChild(localAudio);
             } else {
                 const tag = document.createElement('script');
@@ -400,7 +331,15 @@
                     }
                     ytPlayer = new YT.Player('yt-audio-player', {
                         videoId: getYoutubeId(rawAudioUrl),
-                        playerVars: { 'autoplay': 0, 'controls': 0, 'start': startTime, 'playsinline': 1 }
+                        playerVars: { 'autoplay': 0, 'controls': 0, 'start': startTime, 'playsinline': 1 },
+                        events: {
+                            'onStateChange': (e) => {
+                                if (e.data === 0) { // إعادة الأغنية عند الانتهاء
+                                    ytPlayer.seekTo(startTime);
+                                    ytPlayer.playVideo();
+                                }
+                            }
+                        }
                     });
                 }
             }
@@ -408,13 +347,18 @@
 
         function startAudioAndNext(slideNum, gifName) {
             if (hasAudio) {
-                if (isMp3File && localAudio) { localAudio.currentTime = startTime; localAudio.play().catch(e=>console.log(e)); } 
-                else if (!isMp3File && ytPlayer && ytPlayer.playVideo) { ytPlayer.seekTo(startTime); ytPlayer.playVideo(); }
+                if (isMp3File && localAudio) { 
+                    localAudio.currentTime = startTime; 
+                    localAudio.play().catch(e=>console.log(e)); 
+                } 
+                else if (!isMp3File && ytPlayer && ytPlayer.playVideo) { 
+                    ytPlayer.seekTo(startTime); 
+                    ytPlayer.playVideo(); 
+                }
             }
             goToSlide(slideNum, gifName);
         }
 
-        // 5. مؤثرات الخلفية المتساقطة
         function createFallingItems() {
             const container = document.getElementById('fallingItems');
             const items = ['🩷', '🎀'];
